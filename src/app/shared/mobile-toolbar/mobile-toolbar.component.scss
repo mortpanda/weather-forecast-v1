@@ -1,0 +1,64 @@
+@media (orientation: portrait) {
+    #mobileDock {
+        .p-dock {}
+
+        .p-dock-list {
+            width: 100vw !important;
+            height: 70px !important;
+            position: fixed !important;
+            left: 0vw !important;
+            top: 0 !important;
+        }
+
+        .p-dock .p-dock-list {
+            padding: 0px !important;
+        }
+    }
+}
+
+
+@media (orientation: landscape) {
+    #mobileDock {
+        .p-dock {}
+
+        .p-dock-list {
+            width: 6vw !important;
+            height: 100vh !important;
+            position: fixed !important;
+            left: 0vw !important;
+            top: 0 !important;
+            display: block !important;
+            text-align: center !important;
+            border-radius: 1px!important;
+        }
+
+        .p-dock-list-container {
+            text-align: center !important;
+            
+        }
+
+        .p-dock-action {
+            display: block !important;
+            padding-top: 15px !important;
+            text-align: center !important;
+            // width:50px!important;
+        }
+        .p-dock-item {
+            // display: inline-block !important;
+            padding: 0px !important;
+            padding-top: 10px !important;
+            text-align: center !important;
+            display: block !important;
+          }
+          .p-dock .p-dock-action {
+            display: block !important;
+            text-align: center !important;
+            width: 2rem!important;
+            height: 2rem!important;
+            // padding-right: 5px !important;
+        }
+    }
+    
+}
+
+

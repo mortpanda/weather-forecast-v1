@@ -1,0 +1,68 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<div class="elevationMainDiv" id="intro">
+
+    <div *ngIf="myElevationData; else notShow" fxLayout="rows wap" fxLayoutAlign="center center">
+
+        <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+            <app-mobile-toolbar></app-mobile-toolbar>
+
+            <div class="elevationSubDiv" fxLayout="rows wap" fxLayoutAlign="center center">
+
+                <div class="elevationDataContainer" fxLayout="rows wap" fxLayoutAlign="center start">
+
+                    <div class="elevationTile" fxLayout="rows wap" fxLayoutAlign="center center"
+                        *ngFor="let elevation of arrElevation">
+                        <p-button id="elevationBtn" (click)="openDetailedForecast(elevation.location)">
+                            <div class="elevationTileSub">
+                                <img src="assets/img/baseline_moving_white_48dp.png" class="elevationImg">
+                            </div>
+                            <div class="elevationTileSub">
+                                <a class="elevationLabel">{{elevation.location.strLabel}}</a>
+                            </div>
+                            <div class="elevationTileSub">
+                                <a class="elevationLabel">{{elevation.locationWeather.elevation[0]}} m</a>
+                            </div>
+                        </p-button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </ng-template>
+    </div>
+    <!-- ************************* WEB SCREEN ************************* -->
+    <ng-template #bigScreen>
+        <app-web-toolbar></app-web-toolbar>
+
+        <div class="lgElevationMainDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+            <div class="lgElevationSubDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+                <div class="lgElevationTile" fxLayout="rows wap" fxLayoutAlign="center center"
+                    *ngFor="let elevation of arrElevation">
+                    <p-button id="lgElevationBtn" (click)="openDetailedForecast(elevation.location)">
+                        <div class="lgElevationTileSub">
+                            <img src="assets/img/baseline_moving_white_48dp.png" class="elevationImg">
+                        </div>
+                        <div class="lgElevationTileSub">
+                            <a class="lgElevationLabel">{{elevation.location.strLabel}}</a>
+                        </div>
+                        <div class="lgElevationTileSub">
+                            <a class="lgElevationLabel">{{elevation.locationWeather.elevation[0]}} m</a>
+                        </div>
+                    </p-button>
+                </div>
+            </div>
+        </div>
+
+    </ng-template>
+</div>
+
+<ng-template #notShow>
+    <div class="progressMainDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+        <div class="progressSpinner" fxLayoutAlign="center center">
+            <p-progressSpinner [style]="{width: '300px', height: '300px'}" strokeWidth="6"></p-progressSpinner>
+        </div>  
+        <div class="progressSpinner" fxLayoutAlign="center center">データをダウンロードしてます・・・</div>
+    </div>
+</ng-template>

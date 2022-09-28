@@ -1,0 +1,242 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('../node_modules/primeng/resources/themes/lara-light-blue/theme.css');
+@import url('../node_modules/primeng/resources/primeng.min.css');
+@import url('../node_modules/primeicons/primeicons.css');
+@import url('../node_modules/primeflex/primeflex.css');
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "ABCWhyte Book", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu",
+    "Cantarell", "Helvetica Neue", sans-serif !important;
+  color: #FFFFFF;
+  // display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+#intro {
+  /* Pint the below path to another image to change the background */
+  /* background-image: url('assets/img/okta_blue_bg.png'); */
+  background-image: url('assets/img/bg-cloud-v2.jpg');
+
+  height: 100%;
+  /* Below for Parallax effect */
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+
+}
+
+
+.p-element,
+.pi,
+.pi-fw:link {
+  text-decoration: none;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+}
+
+.p-element,
+.pi,
+.pi-fw:link {
+  text-decoration: none;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+}
+
+.p-element,
+.pi,
+.pi-fw:link :hover {
+  text-decoration: none;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+}
+
+.p-element,
+.pi,
+.pi-fw:link :active {
+  text-decoration: none;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+}
+
+.p-menu .p-menuitem-link .p-menuitem-icon {
+  color: #00297a !important;
+}
+
+
+.appLabel {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  margin-left: 10px !important;
+}
+
+.progressMainDiv{
+  // border-style: dotted;
+  width:100%!important;
+  // height:100%!important;
+  // display: block;
+}
+.progressSpinner{
+  width:100%!important;
+  // height:100%!important;
+  // display: block;
+}
+
+@media (orientation: portrait) {
+  #credential_picker_container {
+    right: 0px !important;
+    top: 10px !important;
+  }
+
+  .mainDiv {
+    // border-style: dotted !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .mainBanner {
+    // width:200px!important;
+    height: 100px !important;
+    padding: 10px !important;
+    background-color: #FFFFFF !important;
+    border-radius: 5px !important;
+  }
+
+  // .subDiv {
+  //   // border-style: dotted !important;
+  //   margin: 10px !important;
+  //   width: 100% !important;
+  // }
+
+  #mainMenuBtn {
+    
+    .p-button {
+      background-color: transparent;
+      width:100% !important;
+      border: none !important;
+      // border-radius: 5px !important;
+      // border-width: 1px !important;
+      height:calc(90vh / 5)!important;
+    }
+  }
+
+  .menuItem {
+    // border-style: dotted !important;
+    // width: calc(96% / 2) !important;
+    width:100%!important;
+    height:calc(90vh / 5)!important;
+    // opacity: .8!important;
+    margin: 2px!important;
+
+  }
+
+  .menuItemBg {
+    width: 100% !important;
+    // text-align: center!important;
+    // opacity: .8!important;
+    // border-radius: 5px !important;
+  }
+}
+
+@media (orientation: landscape) {
+  #mainMenuBtn {
+    // width: 30% !important;
+
+    .p-button {
+      background-color: transparent;
+      width: 100% !important;
+      border: none !important;
+      // border-radius: 5px !important;
+      // border-width: 1px !important;
+      height:calc(90vh / 3)!important;
+    }
+  }
+
+  .menuItem {
+    // border-style: dotted !important;
+    width: calc(100% / 3) !important;
+    // opacity: .8!important;
+    margin: 10px !important;
+
+  }
+
+  .menuItemBg {
+    width: 100% !important;
+    // text-align: center!important;
+    // opacity: .8!important;
+    // border-radius: 5px !important;
+  }
+
+  .mainDiv {
+    // border-style: dotted !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+  }
+
+  .mainBanner {
+    padding: 10px !important;
+    background-color: #FFFFFF !important;
+    border-radius: 5px !important;
+  }
+
+  #credential_picker_container {
+    right: 30px !important;
+    top: 80px !important;
+  }
+
+}
+
+
+@media(min-width: 960px) {
+
+  .lgMainDiv{
+    width: 100vw !important;
+        height: 100vh !important;
+  }
+  // #credential_picker_container {
+  //   right: 20% !important;
+  //   top: 30% !important;
+  // }
+  .lgMainBanner {
+    width: 450px !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0px 5px 12px 0px #6e6e78 !important;
+  }
+
+  // .lgScreenSubContainer {
+  //   // border-style: dotted;
+
+  //   width: 100% !important;
+
+  // }
+
+  // .lgScreenColumn {
+  //   width: calc(100% / 2) !important;
+  //   height: 100% !important;
+  //   // border-style: dotted;
+  //   text-align: center !important;
+  // }
+
+  // .lgScreenSubDiv {
+  //   // border-style: dotted;
+  //   width: 100% !important;
+  //   height: 100% !important;
+  // }
+
+  // .lgScreenMainDiv {
+  //   width: 100vw !important;
+  //   height: 100vh !important;
+  // }
+}

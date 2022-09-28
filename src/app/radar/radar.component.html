@@ -1,0 +1,22 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<div class="radarMainDiv" id="intro">
+    <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+        <app-mobile-toolbar></app-mobile-toolbar>
+        <div class="radarMain">
+            <iframe [src]="strSafeSite" class="RadariFrame" ></iframe>
+        </div>
+
+    </ng-template>
+
+    <!-- ************************* WEB SCREEN ************************* -->
+    <ng-template #bigScreen>
+        <app-web-toolbar></app-web-toolbar>
+        <div class="lgMainDiv" id="intro" fxLayout="rows wrap" fxLayoutAlign="center start">
+            
+            <div class="lgRadarMainDiv">
+                <iframe [src]="strSafeSite" class="lgRadariFrame" ></iframe>                
+            </div>
+
+        </div>
+    </ng-template>
+</div>

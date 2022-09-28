@@ -1,0 +1,125 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<div class="dailyForecastMainDiv" id="intro">
+
+    <div *ngIf="dalyForecast; else notShow" fxLayout="rows wap" fxLayoutAlign="center center">
+
+        <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+            <app-mobile-toolbar></app-mobile-toolbar>
+
+
+            <div class="dailyForecastMainContainer" fxLayout="row wrap" fxLayoutAlign="center start">
+
+                <div class="forecastLocationContainer" fxLayout="columns" fxLayoutAlign="start start"
+                    *ngFor="let forecast of arrForecastData;let i=index">
+
+                    <div class="dailyForecastTile">
+                        <p-button id="dailyforecastTile" (click)="openDetailedForecast(forecast.location)">
+                            <div class="forecastSubDiv">
+                                {{forecast.location.strLabel}}
+                            </div>
+                            <div class="forecastSubDiv">
+                                <img src="/assets/weather/{{forecast.weatherdata.current_weather.weathercode}}.svg"
+                                    class="forecastImg">
+                            </div>
+                            <div class="forecastSubDiv">
+                                {{forecast.weatherdata.current_weather.weatherstring}}
+                            </div>
+                            <div class="forecastSubDiv">
+                                {{forecast.weatherdata.current_weather.temperature}} ℃
+                            </div>
+                        </p-button>
+                    </div>
+
+
+                    <div class="dailyForecastTile" *ngFor="let daily of forecast.weatherdata.daily.time;let i=index">
+                        <div class="forecastSubDiv">
+                            <a class="forecastDate">
+                                {{daily | date:'EEEE':'JST'}} <br />
+                                {{daily | date:'MMM d, y':'JST'}}</a>
+                        </div>
+                        <div class="forecastSubDiv">
+                            <img src="/assets/weather/{{forecast.weatherdata.daily.weathercode[i]}}.svg"
+                                class="forecastImg">
+                        </div>
+                        <div class="forecastSubDiv">
+                            {{forecast.weatherdata.daily.weatherstring[i]}}
+                        </div>
+                        <div class="forecastSubDiv">
+                            {{forecast.weatherdata.daily.temperature_2m_min[i]}} ℃ /
+                            {{forecast.weatherdata.daily.temperature_2m_max[i]}} ℃
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <!-- ************************* WEB SCREEN ************************* -->
+    <ng-template #bigScreen>
+        <app-web-toolbar></app-web-toolbar>
+        <div class="lgDailyForecastMainDiv" fxLayout="rows wrap" fxLayoutAlign="center start">
+
+            <div class="lgDailyForecastMainContainer" fxLayout="row wrap" fxLayoutAlign="center start">
+
+                <div class="lgForecastLocationContainer" fxLayout="columns" fxLayoutAlign="center center"
+                    *ngFor="let forecast of arrForecastData;let i=index">
+
+                    <div class="lgDailyForecastTile">
+                        <p-button id="lgDailyForecastTileBtn" (click)="openDetailedForecast(forecast.location)" fxLayoutAlign="center center">
+                             <div class="forecastSubDiv">
+                                {{forecast.location.strLabel}}
+                            </div>
+                            <div class="forecastSubDiv">
+                                <img src="/assets/weather/{{forecast.weatherdata.current_weather.weathercode}}.svg"
+                                    class="forecastImg">
+                            </div>
+                            <div class="forecastSubDiv">
+                                {{forecast.weatherdata.current_weather.weatherstring}}
+                            </div>
+                            <div class="forecastSubDiv">
+                                {{forecast.weatherdata.current_weather.temperature}} ℃
+                            </div> 
+                        </p-button>
+                    </div>
+
+                    <div class="lgDailyForecastTile" *ngFor="let daily of forecast.weatherdata.daily.time;let i=index">
+                        <div class="forecastSubDiv">
+                            <a class="forecastDate">
+                                {{daily | date:'EEEE':'JST'}} <br />
+                                {{daily | date:'MMM d, y':'JST'}}</a>
+                        </div>
+                        <div class="forecastSubDiv">
+                            <img src="/assets/weather/{{forecast.weatherdata.daily.weathercode[i]}}.svg"
+                                class="forecastImg">
+                        </div>
+                        <div class="forecastSubDiv">
+                            {{forecast.weatherdata.daily.weatherstring[i]}}
+                        </div>
+                        <div class="forecastSubDiv">
+                            {{forecast.weatherdata.daily.temperature_2m_min[i]}} ℃ /
+                            {{forecast.weatherdata.daily.temperature_2m_max[i]}} ℃
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </ng-template>
+</div>
+
+<ng-template #notShow>
+    <div class="progressMainDiv" fxLayout="rows wap" fxLayoutAlign="center center">
+        <div class="progressSpinner" fxLayoutAlign="center center">
+            <p-progressSpinner [style]="{width: '300px', height: '300px'}" strokeWidth="6"></p-progressSpinner>
+        </div>
+        <div class="progressSpinner" fxLayoutAlign="center center">データをダウンロードしてます・・・</div>
+    </div>
+</ng-template>
+
+
+<!-- ;let i=index -->

@@ -1,0 +1,226 @@
+@media (orientation: portrait) {
+    .elevationMainDiv {
+        // border-style: dotted;
+        color: #FFFFFF !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+
+    .elevationSubDiv {
+        // border-style: dotted;
+        width: 100vw !important;
+        height: 95vh !important;
+        position: fixed;
+        top: 6vh !important;
+        left: 0vw !important;
+        padding: 5px !important;
+        overflow: auto !important;
+        margin-bottom: 10px !important;
+
+    }
+
+    .elevationDataContainer {
+        // border-style: dotted;
+        width: 100% !important;
+        height: 95% !important;
+        overflow: auto !important;
+    }
+
+    .elevationTile {
+        border-style: solid;
+        height: calc(95% / 5) !important;
+        width: calc(100vw / 2.5) !important;
+        margin: 10px !important;
+        border-radius: 5px !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        backdrop-filter: blur(10px) !important;
+        // padding:5px!important;
+    }
+
+    .elevationTileSub {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .elevationLabel {
+        font-size: 18px!important;
+    }
+
+    .elevationImg {
+        width: 40px !important;
+    }
+
+    
+    #elevationBtn {
+        width: 100% !important;
+        height: 100% !important;
+
+        .p-button {
+            display: block !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: transparent !important;
+            // border-color: #FFFFFF !important;
+            // border-radius: 5px !important;
+            // border-width: 1px !important;
+            border: none !important;
+            padding: 5px !important;
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    .elevationMainDiv {
+        // border-style: dotted;
+
+        color: #FFFFFF !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .elevationSubDiv {
+        // border-style: dotted;
+        width: 94vw !important;
+        height: 97vh !important;
+        position: fixed;
+        top: 0vh !important;
+        left: 6vw !important;
+        padding: 15px !important;
+        overflow: auto !important;
+        margin-bottom: 10px !important;
+    }
+
+    .elevationDataContainer {
+        // border-style: dotted;
+        width: 94vw !important;
+        height: 95vh !important;
+    }
+
+    .elevationTile {
+        border-style: solid;
+        height: calc(95% / 3) !important;
+        width: calc(100vw / 5) !important;
+        margin: 10px !important;
+        border-radius: 5px !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        backdrop-filter: blur(10px) !important;
+        // padding:5px!important;
+    }
+
+    .elevationTileSub {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .elevationLabel {}
+
+    .elevationImg {
+        width: 40px !important;
+    }
+
+    
+    #elevationBtn {
+        width: 100% !important;
+            height: 100% !important;
+        .p-button {
+
+            background-color: transparent !important;
+            width: 100% !important;
+            height: 100% !important;
+            display: block !important;
+            // border-color: #FFFFFF !important;
+            // border-radius: 5px !important;
+            // border-width: 1px !important;
+            border: none !important;
+            padding: 5px !important;
+        }
+    }
+
+}
+
+@media(min-width: 960px) {
+    .lgElevationMainDiv {
+        // border-style: dotted;
+
+        color: #FFFFFF !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        padding: 15px !important;
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    }
+
+    .lgElevationSubDiv {
+        // border-style: dotted;
+
+        width: 90vw !important;
+        height: 85vh !important;
+        overflow: auto !important;
+        margin-top: 20px !important;
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    }
+
+
+    .lgElevationTile {
+        border-style: solid;
+        height: calc(95% / 3) !important;
+        width: calc(100vw / 7) !important;
+        margin: 10px !important;
+        border-radius: 5px !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        backdrop-filter: blur(10px) !important;
+        // padding:5px!important;
+    }
+
+    .lgElevationTileSub {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .lgElevationLabel {
+        font-size: 18px!important;
+    }
+
+    .elevationImg {
+        width: 60px !important;
+    }
+    #lgElevationBtn {
+        width: 100% !important;
+            height: 100% !important;
+        .p-button {
+            background-color: transparent !important;
+            background-color: transparent !important;
+            width: 100% !important;
+            height: 100% !important;
+            display: block !important;
+            // border-color: #FFFFFF !important;
+            // border-radius: 5px !important;
+            // border-width: 1px !important;
+            border: none !important;
+            padding: 5px !important;
+        }
+    }
+
+}
+
+.progressSpinner {
+    width: 100%
+}

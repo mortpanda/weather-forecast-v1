@@ -1,0 +1,362 @@
+@media (orientation: portrait) {
+    .startMainDiv {
+        // border-style: dotted;
+        background-color: black;
+
+        width: 100vw !important;
+        height: 100vh !important;
+        overflow: auto !important;
+    }
+
+    .appTile {
+        // border-style: dotted;
+
+        width: 100% !important;
+        height: calc(90vh / 5) !important;
+    }
+
+    #appTileBtn {
+        width: 100% !important;
+        height: 100% !important;
+
+        .p-button {
+            background-color: transparent !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+    }
+
+    .btnMainDiv {
+        // border-style: dotted;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .btnSubDiv {
+        // border-style: dotted;
+        width: 100% !important;
+    }
+
+    .btnsecondDiv {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .userInfoDiv {
+        background-color: #FFFFFF !important;
+        padding: 5px !important;
+        width: 100% !important;
+        // height:100%!important;
+        text-align: center;
+        height: 10vh !important;
+        color: black !important;
+    }
+
+    .userInfoSub {
+        width: 100% !important;
+        color: black !important;
+        // border-style: dotted;
+    }
+
+    .startBanner {
+        width: 60% !important;
+        padding: 5px !important;
+
+    }
+
+    .avatarImg {
+        height: 40px !important;
+    }
+
+    .appContainer {
+        width: 100% !important;
+    }
+
+    .addLocation {
+        width: 100% !important;
+        height: 50px !important;
+        text-align: center !important;
+    }
+
+    #addLocationBtn {
+
+        // height: 100% !important;
+        //     width: 100% !important;
+        .p-button {
+            text-align: center !important;
+            padding: 0px !important;
+            height: 100% !important;
+            width: 100% !important;
+            background-color: transparent !important;
+            border: none !important;
+            display: block !important;
+            padding: 10px !important
+        }
+    }
+
+    .addLocationLabel {
+        margin-left: 10px !important;
+        padding: 5px !important;
+    }
+}
+
+@media (orientation: landscape) {
+    .startMainDiv {
+        // border-style: dotted;
+
+        background-color: #FFFFFF !important;
+        // background-image: url('/assets/img/bg-cloud-v2.jpg');
+        // height: 100%;
+        /* Below for Parallax effect */
+        background-attachment: fixed !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        color: black !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        overflow: auto !important;
+        display: inline-flex !important;
+
+    }
+
+    .userInfoDiv {
+        // border-style: dotted;
+        height: 15% !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .userInfoSub {
+        // border-style: dotted;
+        height: 100% !important;
+        width: 100% !important;
+        padding: auto
+    }
+
+    .startBanner {
+        background-color: #FFFFFF !important;
+        height: 100% !important;
+        padding: 5px !important;
+        border-radius: 5px !important;
+    }
+
+    .avatarImg {
+        background-color: #FFFFFF !important;
+        height: 100% !important;
+        padding: 5px !important;
+        border-radius: 5px !important;
+    }
+
+    .appContainer {
+        // border-style: dotted;
+        width: 100% !important;
+        height: 85% !important;
+        // overflow: auto !important;   
+        // display: inline-block!important;
+        // padding: 15px!important;
+    }
+
+    .appTile {
+        // border-style: dotted;
+
+        width: calc(100% / 5) !important;
+        // height: calc(100% / 3) !important;
+        height: 100% !important;
+        // margin:10px!important;
+        // border-radius: 5px!important;
+        // box-shadow: 0px 5px 12px 0px #6e6e78 !important;
+    }
+
+    #appTileBtn {
+        // width: 100% !important;
+        height: 100% !important;
+
+        .p-button {
+            background-color: transparent !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+    }
+
+    .btnMainDiv {
+        // border-style: dotted;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 5px !important
+    }
+
+    .addLocation {
+        width: 100% !important;
+        height: 50px !important;
+        text-align: center !important;
+    }
+
+    #addLocationBtn {
+
+        // height: 100% !important;
+        //     width: 100% !important;
+        .p-button {
+            text-align: center !important;
+            padding: 0px !important;
+            height: 100% !important;
+            width: 100% !important;
+            background-color: transparent !important;
+            border: none !important;
+            display: block !important;
+            padding: 10px !important
+        }
+    }
+
+    .addLocationLabel {
+        margin-left: 10px !important;
+        padding: 5px !important;
+    }
+
+
+
+}
+
+@media(min-width: 960px) {
+    .lgSubMainDiv {
+        // border-style: solid;
+        // border-width: 1px!important;
+        // border-radius: 5px!important;
+        // margin-top: 2% !important;
+        height: 80% !important;
+        width: 90% !important;
+        // padding: 10px !important;
+    }
+
+    .lgAvatarDiv {
+        // border-style: dotted;
+        border-radius: 5px !important;
+        width: 70px !important;
+        height: 70px !important;
+        padding: 2px !important;
+        position: fixed;
+        bottom: 1vh;
+        right: .5vw;
+
+    }
+
+    .lgStartAvatar {
+        width: 60px !important;
+        height: 60px !important;
+        padding: 2px !important;
+        border-radius: 5px !important;
+        background-color: #FFFFFF !important;
+        box-shadow: 0px 5px 12px 0px #6e6e78 !important;
+    }
+
+    .lgAppTile {
+        width: calc(90% / 6) !important;
+        height: calc(80% / 2.5) !important;
+        margin: 10px !important;
+        border-radius: 5px !important;
+        box-shadow: 0px 5px 12px 0px #6e6e78 !important;
+    }
+
+    #lgAppTileBtn {
+        width: 100% !important;
+        height: 100% !important;
+        background-color: transparent !important;
+
+        .p-button {
+            width: 100% !important;
+            height: 100% !important;
+            background-color: transparent !important;
+            display: inline-block !important;
+            border: none !important;
+        }
+    }
+
+    .lgBtnDiv {
+        // border-style: dotted !important;
+        margin-top: 5px !important;
+        width: 100% !important;
+    }
+
+    .lgBtnImg {}
+
+    #addLocSpeeddial {
+        .p-speeddial {
+            position: fixed !important;
+            bottom: 25% !important;
+            left: 5px !important;
+        }
+    }
+
+
+}
+
+// Modal styles
+#addLocationModal {
+    .p-dialog {
+
+        .p-dialog-header-close-icon {
+            color: black !important;
+        }
+    }
+}
+
+.modalMainDiv {
+    // border-style: dotted;
+     color: black!important;
+
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center !important;
+    font-size: 14px !important;
+
+}
+
+.modalSubDiv {
+    // border-style: dotted;
+    color: black;
+    width: 100% !important;
+    margin-top: 10px !important;
+    
+}
+
+#adLocLong {
+    width: 250px !important;
+    color: black!important;
+    .p-inputtext{
+        // margin-top: 10px !important;    
+        color: black!important;
+    }
+    
+}
+
+#adLocLat {
+    width: 250px !important;
+    color: black!important;
+    .p-inputtext{
+        // margin-top: 10px !important;    
+        color: black!important;
+    }
+}
+
+#adLocLabel {
+    width: 250px !important;
+    color: black!important;
+    .p-inputtext{
+        // margin-top: 10px !important;    
+        color: black!important;
+    }
+}
+
+.p-inputgroup{
+    margin-top: 10px !important;    
+    color: black;
+}
+
+#locationSubmitBtn{
+    .p-button{
+        margin-top: 10px!important;
+
+    }
+}

@@ -1,0 +1,146 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<div class="forecastDetailsMainDiv" id="intro">
+
+    <div *ngIf="myFreocasrDetailsData; else notShow" fxLayout="rows wap" fxLayoutAlign="center center">
+
+        <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+            <app-mobile-toolbar></app-mobile-toolbar>
+
+            <div class="forecastDetailContainer" fxLayout="rows wap" fxLayoutAlign="center start">
+
+                <div class="forecastDetailsCurrentDiv" fxLayout="columns wrap" fxLayoutAlign="center center">
+                    <div class="forecastDetailsLocation">{{arrLocation.strLabel}}</div>
+
+                    <div class="forecastDetailsConditionDiv" fxLayout="columns" fxLayoutAlign="center center">
+
+                        <div class="forecastrDetailsSub">
+                            <img src="/assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
+                                class="forecastDetailsCurrentImg">
+                        </div>
+                        <div class="forecastrDetailsSub">
+                            {{arrDetailedForecast.current_weather.weatherstring}}
+                        </div>
+                        <div class="forecastrDetailsSub">
+                            {{arrDetailedForecast.current_weather.temperature}} ℃</div>
+                    </div>
+                </div>
+
+                <div class="forecastGraphDiv">
+                    <!-- Graph -->
+                    <p-chart type="line" [data]="chardData" [options]="LinebasicOptions" height="100%"></p-chart>
+                </div>
+
+                <div class="forecastDetailsMain">
+
+                    <div class="forecastDetailsTile"
+                        *ngFor="let forecastDate of arrDetailedForecast.hourly.time;let i=index" fxLayout="columns"
+                        fxLayoutAlign="center start">
+
+                        <div class="forecastDetailsSub" fxLayout="rows wap" fxLayoutAlign="center center">
+                            <div class="forecastDetailsTimeDiv" fxLayout="rows wap" fxLayoutAlign="center center">
+                                {{forecastDate | date:'EEEE':'JST'}}
+                                <br />
+
+                                {{forecastDate | date:'MMM d':'JST'}} {{forecastDate | date:'H:mm':'JST'}}
+
+                            </div>
+                        </div>
+                        <div class="forecastDetailsSub" fxLayout="rows wap" fxLayoutAlign="center center">
+
+                            <img src="/assets/weather/{{arrDetailedForecast.hourly.weathercode[i]}}.svg"
+                                class="forecastDetailsImg">
+                        </div>
+                        <div class="forecastDetailsSub" fxLayoutAlign="center center">
+                            {{arrDetailedForecast.hourly.weatherstring[i]}}
+                            <br />
+                            {{arrDetailedForecast.hourly.temperature_2m[i]}}℃ <a
+                                class="spacer"></a>{{arrDetailedForecast.hourly.relativehumidity_2m[i]}} %
+                            <br /> {{arrDetailedForecast.hourly.precipitation[i]}} mm
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </ng-template>
+    </div>
+    <!-- ************************* WEB SCREEN ************************* -->
+    <ng-template #bigScreen>
+        <app-web-toolbar></app-web-toolbar>
+
+        <div class="lgForecastDetailsMainDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+
+            <div class="lgForecastDetailsSub" fxLayout="columns" fxLayoutAlign="center center">
+
+                <div class="lgForecastDetailsLeftDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+
+                    <div class="lgForecastDetailsCurrentTile" fxLayout="columns" fxLayoutAlign="center center">
+
+                        <div class="lgForecastDetailsCurrentTileSub" fxLayoutAlign="center center">
+                            {{arrLocation.strLabel}}
+                            <br />Now
+                        </div>
+                        <div class="lgForecastDetailsCurrentTileSub" fxLayoutAlign="center center">
+                            <img src="/assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
+                                class="lgForecastDetailsCurrentImg">
+                        </div>
+                        <div class="lgForecastDetailsCurrentTileSub" fxLayoutAlign="center center">
+                            {{arrDetailedForecast.current_weather.weatherstring}}<br />{{arrDetailedForecast.current_weather.temperature}}
+                            ℃
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="lgForecastDetailsTile" fxLayout="columns" fxLayoutAlign="center center"
+                        *ngFor="let forecastDate of arrDetailedForecast.hourly.time;let i=index">
+
+                        <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
+                            {{forecastDate | date:'EEEE':'JST'}}<br />
+                            {{forecastDate | date:'MMM d':'JST'}}<br />
+                            {{forecastDate | date:'H:mm aa':'JST'}}
+                        </div>
+                        <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
+                            {{arrDetailedForecast.current_weather.weatherstring}}
+                            <br />
+                            {{arrDetailedForecast.hourly.precipitation[i]}} mm
+                        </div>
+                        <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
+                            <img src="/assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
+                                class="lgScreenDetail">
+                        </div>
+                        <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
+                            {{arrDetailedForecast.hourly.temperature_2m[i]}}℃
+                            <br />{{arrDetailedForecast.hourly.relativehumidity_2m[i]}} %
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="lgForecastDetailsRightDiv">
+                    <p-chart type="line" [data]="chardData" [options]="LinebasicOptions" height="100%"></p-chart>
+                </div>
+            </div>
+
+        </div>
+
+    </ng-template>
+</div>
+
+<ng-template #notShow>
+    <div class="progressMainDiv" fxLayout="rows wap" fxLayoutAlign="center center">
+        <div class="progressSpinner" fxLayoutAlign="center center">
+            <p-progressSpinner [style]="{width: '300px', height: '300px'}" strokeWidth="6"></p-progressSpinner>
+        </div>
+        <div class="progressSpinner" fxLayoutAlign="center center">データをダウンロードしてます・・・</div>
+    </div>
+</ng-template>

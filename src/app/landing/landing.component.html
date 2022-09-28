@@ -1,0 +1,48 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+  <div class="mainDiv" fxLayout="rows wap" fxLayoutAlign="start center" id="intro">
+
+    <div class="subDiv">
+      <img src="{{RandomNumberService.bannerPath}}" class="mainBanner">
+    </div>
+
+    <div class="subDiv">
+      <a class="appLabel">Weather Forecast v1</a>
+    </div>
+
+    <div class="googltBtnDiv" fxLayout="rows wap" fxLayoutAlign="start start">
+      <a class="googleBtn" (click)="Gauthenticate()"></a>
+    </div>
+    
+  </div>
+</ng-template>
+
+<!-- ************************* WEB SCREEN ************************* -->
+<ng-template #bigScreen>
+  <div class="lgScreenMainDiv" id="intro">
+
+    <div class="lgScreenSubDiv" fxLayout="row" fxLayoutAlign="center center">
+
+      <div class="lgScreenColumn" fxLayout="row wrap" fxLayoutAlign="center center">
+        <div class="lgScreenSubContainer">
+          <img src="{{RandomNumberService.bannerPath}}" class="lgMainBanner">
+        </div>
+
+        <div class="lgScreenSubContainer">
+          <a class="appLabel">Weather Forecast v1</a>
+        </div>
+        <div class="lggoogltBtnDiv" fxLayout="rows wap" fxLayoutAlign="center center">
+          <a class="lggoogleBtn" (click)="Gauthenticate()"></a>
+        </div>
+      </div>
+
+      <div class="lgScreenColumn" fxLayout="row" fxLayoutAlign="center center">
+        <!-- <div class="lggoogltBtnDiv" fxLayout="rows wap" fxLayoutAlign="center center">
+          <a class="lggoogleBtn" (click)="Gauthenticate()"></a>
+        </div> -->
+      </div>
+
+    </div>
+
+  </div>
+</ng-template>

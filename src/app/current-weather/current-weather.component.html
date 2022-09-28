@@ -1,0 +1,79 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<div class="currentWeatherMainDiv" id="intro">
+    <div *ngIf="myCurrentWeather; else notShow" fxLayout="rows wap" fxLayoutAlign="center center">
+
+        <ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+
+            <div class="currentWeatherHead">
+                <app-mobile-toolbar></app-mobile-toolbar>
+            </div>
+
+            <div class="currentWeatherSubDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+
+                <div class="currentWeatherTile" fxLayout="rows wap" fxLayoutAlign="start start"
+                    *ngFor="let location of colCurrentWeather">
+                    <p-button id="currentWeatherBtn" (click)="openDetailedForecast(location.location)">
+                        <div class="currentWeatherTileSub"><a
+                                class="lgCurrentWeatherLabel">{{location.location.strLabel}}</a></div>
+                        <div class="currentWeatherTileSub">
+                            <img src="/assets/weather/{{location.locationWeather.current_weather.weathercode}}.svg"
+                                class="currenWeatherImg">
+                        </div>
+                        <div class="currentWeatherTileSub">
+                            <a
+                                class="lgCurrentWeatherLabel">{{location.locationWeather.current_weather.weatherstring}}</a>
+                        </div>
+                        <div class="currentWeatherTileSub">
+                            <a class="lgCurrentWeatherLabel">{{location.locationWeather.current_weather.temperature}}
+                                ℃</a>
+                        </div>
+                    </p-button>
+                </div>
+
+            </div>
+
+        </ng-template>
+
+
+    </div>
+    <!-- ************************* WEB SCREEN ************************* -->
+    <ng-template #bigScreen>
+        <app-web-toolbar></app-web-toolbar>
+        <div class="lgCurrentWeatherMainDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+            <div class="lgCurrentWeatherTileDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+
+                <div class="lgCurrentWeatherTile" fxLayout="rows wap" fxLayoutAlign="center start"
+                    *ngFor="let location of colCurrentWeather">
+                    <p-button id="lgCurrentWeatherBtn" (click)="openDetailedForecast(location.location)">
+                        <div class="currentWeatherTileSub"><a
+                                class="lgCurrentWeatherLabel">{{location.location.strLabel}}</a></div>
+                        <div class="currentWeatherTileSub">
+                            <img src="/assets/weather/{{location.locationWeather.current_weather.weathercode}}.svg"
+                                class="currenWeatherImg">
+                        </div>
+                        <div class="currentWeatherTileSub">
+                            <a
+                                class="lgCurrentWeatherLabel">{{location.locationWeather.current_weather.weatherstring}}</a>
+                        </div>
+                        <div class="currentWeatherTileSub">
+                            <a class="lgCurrentWeatherLabel">{{location.locationWeather.current_weather.temperature}}
+                                ℃</a>
+                        </div>
+                    </p-button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </ng-template>
+</div>
+
+<ng-template #notShow>
+    <div class="lgCurrentWeatherMain" fxLayout="rows wap" fxLayoutAlign="center center">
+        <div class="progressSpinner" fxLayoutAlign="center center">
+            <p-progressSpinner [style]="{width: '300px', height: '300px'}" strokeWidth="6"></p-progressSpinner>
+        </div>
+        <div class="progressSpinner" fxLayoutAlign="center center">データをダウンロードしてます・・・</div>
+    </div>
+</ng-template>

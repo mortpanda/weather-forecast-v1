@@ -1,0 +1,135 @@
+<!-- ************************* MOBILE SCREEN ************************* -->
+<ng-template [ngIf]="smallScreen" [ngIfElse]="bigScreen">
+  <div class="startMainDiv" fxLayout="rows wap" fxLayoutAlign="center start">
+
+    <div class="userInfoDiv" fxLayout="columns" fxLayoutAlign="center center">
+      <div class="userInfoSub">
+        <img src="{{RandomNumberService.bannerPath}}" class="startBanner">
+      </div>
+      <div class="userInfoSub" fxLayoutAlign="center center">
+        {{myUserInfo?.name}}
+      </div>
+      <div class="userInfoSub">
+        <img src="{{myUserInfo?.picture}}" class="avatarImg">
+      </div>
+    </div>
+
+    <div class="appContainer" fxLayout="rows wap" fxLayoutAlign="center start">
+      <div class="appTile" *ngFor="let menuItem of mainMenuItems" fxLayout="rows wap" fxLayoutAlign="center center"
+        [ngStyle]="{backgroundColor:menuItem.color}">
+
+        <div class="btnMainDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+          <p-button (onClick)="OpenWebsite(menuItem.routerLink)" id="appTileBtn">
+
+            <div class="btnsecondDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+              <div class="btnSubDiv">
+                <img src="{{menuItem.icon}}">
+              </div>
+
+              <div class="btnSubDiv">
+                {{menuItem.label}}
+              </div>
+            </div>
+
+          </p-button>
+
+        </div>
+      </div>
+      <div class="addLocation" [ngStyle]="{backgroundColor:'var(--purple-300)'}">
+        <p-button (onClick)="openLocationModal()" id="addLocationBtn"><i class="pi pi-plus-circle"></i><a
+            class="addLocationLabel">場所の追加</a></p-button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- ************************* WEB SCREEN ************************* -->
+
+<ng-template #bigScreen>
+  <div class="lgMainDiv" id="intro" fxLayout="rows wrap" fxLayoutAlign="center start">
+    <!-- <div class="lgstartMainDiv" fxLayout="rows wrap" fxLayoutAlign="center center" id="intro"> -->
+    <app-toolbar></app-toolbar>
+
+    <div class="lgSubMainDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+
+      <div class="lgAppTile" *ngFor="let menuItem of mainMenuItems" fxLayout="rows wap" fxLayoutAlign="center center"
+        [ngStyle]="{backgroundColor:menuItem.color}">
+        <p-button (onClick)="OpenWebsite(menuItem.routerLink)" id="lgAppTileBtn">
+          <div fxLayout="rows wap" fxLayoutAlign="center center">
+            <div class="lgBtnDiv">
+              <img src="{{menuItem.icon}}" class="lgBtnImg">
+            </div>
+            <div class="lgBtnDiv">{{menuItem.label}}</div>
+          </div>
+        </p-button>
+      </div>
+    </div>
+
+    <div class="lgAvatarDiv" fxLayout="rows wrap" fxLayoutAlign="center center">
+      <img src="{{myUserInfo?.picture}}" class="lgStartAvatar">
+    </div>
+
+    <p-speedDial [model]="addLocSpeeddial" radius="120" direction="up" id="addLocSpeeddial"></p-speedDial>
+  </div>
+</ng-template>
+
+<!-- ************************* ADD LOCATION MODAL SCREEN ************************* -->
+<p-dialog header="場所の追加" [(visible)]="addLocationModal" [modal]="true" [style]="{width: '350px'}" [draggable]="false"
+  [resizable]="false" [closeOnEscape]="true" [closable]="true" id="addLocationModal">
+
+  <div class="modalMainDiv">
+    <div class="modalSubDiv" class="p-inputgroup">
+      <a id="addLocInputAddon" class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></a>
+      <input type="text" pInputText placeholder="場所の名前" pInputText [(ngModel)]="addLocLabel" id="adLocLabel">
+    </div>
+
+    <div class="modalSubDiv" class="p-inputgroup">
+      <a id="addLocInputAddon" class="p-inputgroup-addon"><i class="pi pi-arrows-v"></i></a>
+      <input type="text" pInputText placeholder="緯度 / Latitude (e.g. 36.20)" pInputText [(ngModel)]="addLocLat"
+        id="adLocLat">
+    </div>
+    <div class="modalSubDiv" class="p-inputgroup">
+      <a id="addLocInputAddon" class="p-inputgroup-addon"><i class="pi pi-arrows-h"></i></a>
+      <input type="text" pInputText placeholder="経度 / Longitude (e.g. 138.35)" pInputText [(ngModel)]="addLocLong"
+        id="adLocLong">
+    </div>
+    <div class="modalSubDiv">
+      <div *ngIf="newLocationSend; else notShow">
+        <div class="addLocationDiv">
+        </div>
+      </div>
+      <ng-template #notShow>
+        <div class="addLocationDiv">
+          <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+        </div>
+      </ng-template>
+    </div>
+    <div class="modalSubDiv">
+      <p-button label="場所を追加" icon="pi pi-check" iconPos="right" id="locationSubmitBtn" (onClick)="submitLocation()"
+        disabled="{{addLocationState}}"></p-button>
+    </div>
+  </div>
+
+</p-dialog>
+
+
+<!-- ///////////////////////////////////////// -->
+<!-- Toast content -->
+<!-- ///////////////////////////////////////// -->
+<p-toast position="top-right"></p-toast>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+
+<p-toast position="top-right" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="p-flex p-flex-column" style="flex: 1">
+      <div class="p-text-center">
+        <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+        <h4>{{message.summary}}</h4>
+        <p>{{message.detail}}</p>
+      </div>
+
+    </div>
+  </ng-template>
+</p-toast>

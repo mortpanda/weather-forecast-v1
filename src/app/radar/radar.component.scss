@@ -1,0 +1,58 @@
+@media (orientation: portrait) {
+
+    .radarMainDiv {
+        color: #FFFFFF !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .radarMain{
+        border-style: dotted;
+        height:calc(100vh - 70px)!important;
+        width: 100vw!important;
+        position: fixed!important;
+        top:calc(100vh - (100vh - 70px))!important;
+    }
+    .RadariFrame{
+        height:calc(100vh - 70px)!important;
+        width: 100%!important;
+        position: fixed!important;
+        top:calc(100vh - (100vh - 70px))!important;
+    }
+}
+
+@media (orientation: landscape) {
+    .radarMainDiv {
+        color: #FFFFFF !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+    .radarMain{
+        border-style: dotted;
+        height:100vh!important;
+        width: calc(100vw - 6vw)!important;
+        position: fixed!important;
+        left:calc(100vw - (100vw - 6vw))!important;
+    }
+    .RadariFrame{
+        height:100vh!important;
+        width: calc(100vw - 6vw)!important;
+        position: fixed!important;
+        left:calc(100vw - (100vw - 6vw))!important;
+    }
+}
+
+@media(min-width: 960px) {
+    .lgRadarMainDiv{
+        // border-style: dotted;
+        
+        height: 90vh !important;
+        width: 100vw !important;
+        margin-bottom: 25px!important;
+    }
+
+    .lgRadariFrame{
+        height: 100% !important;
+        width: 100% !important;       
+    }
+}
