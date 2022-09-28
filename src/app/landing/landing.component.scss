@@ -16,7 +16,7 @@
     .googleBtn {
         width: calc(382px / 2) !important;
         height: calc(92px / 2) !important;
-        background-image: url('/assets/img/btn_google_normal.png');
+        background-image: url('../../assets/img/btn_google_normal.png');
         background-size: contain;
         cursor: pointer !important;
     }
@@ -24,7 +24,7 @@
     .googleBtn:active {
         width: calc(382px / 2) !important;
         height: calc(92px / 2) !important;
-        background-image: url('/assets/img/btn_google_pressed.png');
+        background-image: url('../../assets/img/btn_google_pressed.png');
         background-size: contain;
         cursor: pointer !important;
     }
