@@ -14,7 +14,7 @@
                     <div class="forecastDetailsConditionDiv" fxLayout="columns" fxLayoutAlign="center center">
 
                         <div class="forecastrDetailsSub">
-                            <img src="/assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
+                            <img src="assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
                                 class="forecastDetailsCurrentImg">
                         </div>
                         <div class="forecastrDetailsSub">
@@ -38,7 +38,7 @@
 
                         <div class="forecastDetailsSub" fxLayout="rows wap" fxLayoutAlign="center center">
                             <div class="forecastDetailsTimeDiv" fxLayout="rows wap" fxLayoutAlign="center center">
-                                {{forecastDate | date:'EEEE':'JST'}}
+                                {{forecastDate | date:'EE':'JST'}}
                                 <br />
 
                                 {{forecastDate | date:'MMM d':'JST'}} {{forecastDate | date:'H:mm':'JST'}}
@@ -47,7 +47,7 @@
                         </div>
                         <div class="forecastDetailsSub" fxLayout="rows wap" fxLayoutAlign="center center">
 
-                            <img src="/assets/weather/{{arrDetailedForecast.hourly.weathercode[i]}}.svg"
+                            <img src="assets/weather/{{arrDetailedForecast.hourly.weathercode[i]}}.svg"
                                 class="forecastDetailsImg">
                         </div>
                         <div class="forecastDetailsSub" fxLayoutAlign="center center">
@@ -84,7 +84,7 @@
                             <br />Now
                         </div>
                         <div class="lgForecastDetailsCurrentTileSub" fxLayoutAlign="center center">
-                            <img src="/assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
+                            <img src="assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
                                 class="lgForecastDetailsCurrentImg">
                         </div>
                         <div class="lgForecastDetailsCurrentTileSub" fxLayoutAlign="center center">
@@ -101,7 +101,7 @@
                         *ngFor="let forecastDate of arrDetailedForecast.hourly.time;let i=index">
 
                         <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
-                            {{forecastDate | date:'EEEE':'JST'}}<br />
+                            {{forecastDate | date:'EE':'JST'}}<br />
                             {{forecastDate | date:'MMM d':'JST'}}<br />
                             {{forecastDate | date:'H:mm aa':'JST'}}
                         </div>
@@ -111,7 +111,7 @@
                             {{arrDetailedForecast.hourly.precipitation[i]}} mm
                         </div>
                         <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
-                            <img src="/assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
+                            <img src="assets/weather/{{arrDetailedForecast.current_weather.weathercode}}.svg"
                                 class="lgScreenDetail">
                         </div>
                         <div class="lgForecastDetailsTileSub" fxLayoutAlign="center center">
